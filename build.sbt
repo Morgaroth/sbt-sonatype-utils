@@ -1,4 +1,4 @@
-import _root_.SbtReleaseHelpers._
+import SbtReleaseHelpers._
 import sbtrelease.ReleaseStateTransformations._
 import sbtrelease.ReleaseStep
 
