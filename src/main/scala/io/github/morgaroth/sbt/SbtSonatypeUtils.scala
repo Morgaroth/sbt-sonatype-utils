@@ -56,7 +56,7 @@ trait SbtSonatypeUtils {
 //@formatter:on
   }
 
-  def publishTo = (ver: String) => {
+  def publishRepoForVersion = (ver: String) => {
     val nexus = "https://oss.sonatype.org/"
     if (ver.endsWith("SNAPSHOT"))
       Some("snapshots" at nexus + "content/repositories/snapshots")
