@@ -1,6 +1,7 @@
 import SbtReleaseHelpers._
 import sbtrelease.ReleaseStateTransformations._
 import sbtrelease.ReleaseStep
+import xerial.sbt.Sonatype._
 
 sbtPlugin := true
 
