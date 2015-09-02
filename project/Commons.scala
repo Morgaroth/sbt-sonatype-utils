@@ -1,9 +1,8 @@
-import com.typesafe.sbt.pgp.PgpKeys._
+import com.typesafe.sbt.pgp.PgpKeys.publishSigned
 import sbt.Keys._
 import sbt.{State, TaskKey, _}
 import sbtrelease.ReleaseStep
 import sbtrelease.Utilities._
-import xerial.sbt.Sonatype.SonatypeKeys._
 
 import scala.xml.transform.{RewriteRule, RuleTransformer}
 
@@ -16,8 +15,8 @@ object SbtReleaseHelpers {
 
   val publishArtifactsLocally = oneTaskStep(publishLocal)
   val publishArtifactsSigned = oneTaskStep(publishSigned)
-//  val finishReleaseAtSonatype: ReleaseStep = ReleaseStep(action = Command.process("sonatypeReleaseAll", _))
-  val finishReleaseAtSonatype: ReleaseStep = oneTaskStep(sonatypeReleaseAll)
+  val finishReleaseAtSonatype: ReleaseStep = ReleaseStep(action = Command.process("sonatypeReleaseAll", _))
+  //  val finishReleaseAtSonatype: ReleaseStep = oneTaskStep(sonatypeReleaseAll)
   val clearTarget = oneTaskStep(clean)
 }
 
